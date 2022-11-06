@@ -438,3 +438,9 @@ WHERE Price >  ( SELECT AVG ( Price ) FROM Apartments )
 AND status = 'Not rented' 
 ORDER BY Price
 ```
+
+# Studends and Teachers
+
+```SQL
+ELECT students.id, students.firstname, students.lastname, teachers.lastname AS teacher FROM students, teachers WHERE students.teacherid = teachers.id  ORDER BY students.id;
+```
