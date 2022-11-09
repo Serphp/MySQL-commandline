@@ -1,4 +1,40 @@
 # How use MYSQL
+
+### CREATE TABLES 
+```sql
+CREATE TABLE table_name; 
+```
+
+```sql
+CREATE TABLE Users
+(
+    ID int,
+    FirstName varchar(30),
+    LastName varchar(30),
+    City varchar(45)
+);
+
+```
+
+### Tipos de datos mas comunes.
+
+#### `Numericos`
+* INT - entero
+* FLOAT / DOUBLE -  numero y decimal (2.0)
+
+#### `Fecha y Hora`
+* `DATE` - Formato YEARR-MO-DA.
+* `DATIME` - combinacion de fecha formato YEARR-MM-DD / HH:MM:SS.
+* `TIMESTAP` - 
+* `TIME` - Almacena la hora en formato HH:MM:SS.
+
+#### `Tipo String`
+* `CHAR` - cadena de texto / 255 bytes.
+* `VARCHAR` - Tamaño especificado entre paréntesis.
+* `BLOB` - almacena grande cantidades binarios, imagenes o  archivos.
+* `TEXT` - Grandes cantidades de texto.
+
+
 ```SQL
 SELECT FirstName FROM customers 
 ```
@@ -428,19 +464,3 @@ ORDER BY Rating DESC;
 ```
 
 ---
-
-# Examples 
-
-```SQL
-SELECT *
-FROM Apartments 
-WHERE Price >  ( SELECT AVG ( Price ) FROM Apartments ) 
-AND status = 'Not rented' 
-ORDER BY Price
-```
-
-# Studends and Teachers
-
-```SQL
-ELECT students.id, students.firstname, students.lastname, teachers.lastname AS teacher FROM students, teachers WHERE students.teacherid = teachers.id  ORDER BY students.id;
-```
